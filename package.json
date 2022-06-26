@@ -9,9 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@heroicons/react": "^1.0.6",
+    "@mui/material": "^5.8.5",
+    "axios": "^0.27.2",
+    "cors-anywhere": "^0.4.4",
+    "country-flag-icons": "^1.5.5",
+    "fast-average-color": "^9.1.1",
+    "firebase": "^9.8.4",
+    "moviestmdb": "^2.0.3",
     "next": "12.1.6",
+    "proxy-from-env": "^1.1.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.4.0",
+    "react-responsive-carousel": "^3.2.23",
+    "recoil": "^0.7.4",
+    "tailwindcss-filters": "^3.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
