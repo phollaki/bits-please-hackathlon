@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import { baseTMDBPath, tmdb } from '../pages';
 
@@ -13,8 +14,8 @@ function Banner({movie}) {
     },[movie.genre_ids])
 
   return (
-        <div className="flex m-20 overflow-hidden bg-black/70 rounded-3xl h-96 xl:h-[27rem]">
-            <div className="w-full h-full bg-cover bg-center" style={{backgroundImage: `url("${baseTMDBPath+movie.backdrop_path}")`}}></div>
+        <div className="cursor-pointer flex m-20 overflow-hidden bg-black/70 rounded-3xl h-96 xl:h-[27rem]">
+            <Link href={`/films/${movie.id}`}><div className="w-full h-full bg-cover bg-center" style={{backgroundImage: `url("${baseTMDBPath+movie.backdrop_path}")`}}></div></Link>
 
             <div className="text-white flex w-4/5 flex-col justify-around relative">
                 <h1 className="text-5xl font-bold">{movie.title}</h1>

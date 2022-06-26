@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import MoviesTmdb from "moviestmdb"
 import BannerList from '../components/BannerList'
 import TopSeries from '../components/Recommended'
+import series from "../serieIds"
 
 export const baseTMDBPath = "https://image.tmdb.org/t/p/original/"
 export const tmdb = new MoviesTmdb(process.env.NEXT_PUBLIC_TMDB_CLIENT_ID)
@@ -10,6 +11,8 @@ export const tmdb = new MoviesTmdb(process.env.NEXT_PUBLIC_TMDB_CLIENT_ID)
 export default function Home() {
   const [bg, setBG] = useState()
   const [movies, setMovies] = useState([])
+
+
 
   useEffect(()=>{
     const fetchData = async () => {
@@ -23,7 +26,7 @@ export default function Home() {
   },[])
 
   return (
-    <div className="p-16 pb-44 h-screen w-screen overflow-x-hidden bg-gradient-to-tr from-[#263b69] to-[#5c286f] ">
+    <div className="p-16 pb-44 h-screen w-screen overflow-x-hidden bg-gradient-to-tr from-[#263b69] to-[#5c286f] scrollbar-thumb-gray-900 scrollbar-thin">
       {bg &&
       <>
         <div className={`h-screen max-w-screen-2xl relative mx-auto rounded-3xl backdrop-blur-lg`}>

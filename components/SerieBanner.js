@@ -1,10 +1,11 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import { baseTMDBPath } from '../pages'
 
 function SerieBanner({serie}) {
-    console.log(serie)
   return (
+    <Link href={`/series/${serie.id}`}>
     <div className="hover:-translate-y-3 hover:shadow-pink-500 hover:shadow-md transition-all duration-200 ease-in-out cursor-pointer w-80 bg-black/40 backdrop-blur-lg backdrop-filter bg-clip-padding flex overflow-hidden rounded-xl h-44 z-20 mt-5 ">
         <div className="w-full h-full bg-cover bg-center" style={{backgroundImage: `url("${baseTMDBPath+serie.backdrop_path}")`}}></div>
         {/* <img src={baseTMDBPath+serie.backdrop_path} alt={serie.title}/> */}
@@ -16,6 +17,8 @@ function SerieBanner({serie}) {
             <button className="bg-pink-500 w-28 p-2 cursor-pointer rounded-full">View it</button>
         </div>
     </div>
+    </Link>
+
   )
 }
 

@@ -9,7 +9,7 @@ function Header() {
   return (
     <div className="flex items-center justify-between px-20 pt-10 text-gray-100 relative">
         <div className="flex space-x-6">
-                <Image src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg" width="400" height="50" alt="" />
+                <Link href="/" ><Image className="cursor-pointer" src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg" width="400" height="50" alt="" /></Link>
                 <div className="flex items-center bg-white/5  rounded-full px-5 border-[1px] border-gray-500">
                     <input type="text" className="bg-transparent focus:outline-none" placeholder='Search...' />
                     <SearchIcon className="w-5 cursor-pointer"/>
