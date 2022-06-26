@@ -11,7 +11,6 @@ function BannerList({movies}) {
         showThumbs={false}
         showIndicators={false}
         infiniteLoop
-        width={1320}
         interval={5000}
         showArrows={false}>
         {movies?.map(movie=>(
