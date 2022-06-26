@@ -3,9 +3,7 @@ import { SearchIcon } from '@heroicons/react/outline'
 import { BellIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
 import Link from 'next/link'
-import { tmdb } from '../pages'
 import axios from 'axios'
-import ComboBox from './Combobox'
 
 function Header() {
   const [input, setInput] = useState('')
