@@ -5,21 +5,19 @@ import Banner from './Banner';
 
 
 function BannerList({movies}) {
-  return (
-    <div className="flex px-20">
-        <Carousel
+  return ( <Carousel
         autoPlay
         labels={false}
         showThumbs={false}
         showIndicators={false}
         infiniteLoop
-        interval={8000}
+        width={1320}
+        interval={5000}
         showArrows={false}>
         {movies?.map(movie=>(
             <Banner key={movie.id} movie={movie}/>
         ))}
         </Carousel>
-    </div>
   )
 }
 

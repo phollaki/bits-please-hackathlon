@@ -1,33 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import GenreIcon from './GenreIcon'
 import { baseTMDBPath, tmdb } from '../pages';
-import { countries } from 'country-flag-icons'
-import Image from 'next/image';
 
 function Banner({movie}) {
-    console.log(movie)
     const [genres, setGenres] = useState([])
 
     useEffect(() =>{
         const getGenres = async() =>{
             const res = await tmdb.getGenres()
-            const genres = res.genres.filter(genre=>movie.genre_ids.includes(genre.id)).map(genre=>genre.name)
-            setGenres(genres)
+            setGenres(res.genres.filter(genre=>movie.genre_ids.includes(genre.id)).map(genre=>genre.name))
         }
         getGenres()
     },[movie.genre_ids])
 
   return (
-        <div className="flex overflow-hidden bg-black/70 mt-20 rounded-3xl h-96 xl:h-[27rem]">
-            <img className="" src={baseTMDBPath+movie.backdrop_path} alt={movie.title} />
+        <div className="flex m-20 overflow-hidden bg-black/70 rounded-3xl h-96 xl:h-[27rem]">
+            <div className="w-full h-full bg-cover bg-center" style={{backgroundImage: `url("${baseTMDBPath+movie.backdrop_path}")`}}></div>
 
-            <div className="flex flex-col absolute right-[38rem] mt-5 top-1/2 -translate-y-1/2 space-y-10">
-
-            </div>
-
-            <div className="text-white flex flex-col justify-around relative">
+            <div className="text-white flex w-4/5 flex-col justify-around relative">
                 <h1 className="text-5xl font-bold">{movie.title}</h1>
-                {/* <div className="absolute top-8 right-8"><Image width="20" height="20"  alt={movie.original_language} src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${movie.original_language !== "en" ? movie.original_language.toUpperCase() : "GB"}.svg`}/></div> */}
                 <div>
                     <button className="bg-pink-500 py-2 px-10 rounded-full">{genres[0]}</button>
                 </div>
